@@ -36,8 +36,8 @@ sudo sh cuda_10.2.89_440.33.01_linux.run
 **2. Python environment:** recommending using Conda package manager to install
 
 ```python
-conda create -n autogmsr python=3.7
-source activate autogmsr
+conda create -n automsr python=3.7
+source activate automsr
 ```
 
 **3. Pytorch 11.1.0:** execute the following command in your conda env automsr
