@@ -36,21 +36,21 @@ sudo sh cuda_10.2.89_440.33.01_linux.run
 **2. Python environment:** recommending using Conda package manager to install
 
 ```python
-conda create -n autognas python=3.7
-source activate autognas
+conda create -n autogmsr python=3.7
+source activate autogmsr
 ```
 
-**3. Pytorch 11.1.0:** execute the following command in your conda env autognas
+**3. Pytorch 11.1.0:** execute the following command in your conda env automsr
 
 ```python
 pip3 install torch torchvision torchaudio
 ```
 
-**4. Pytorch Geometric:** execute the following command in your conda env autognas
+**4. Pytorch Geometric:** execute the following command in your conda env automsr
 ```python
 pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
 ```
-**5. Ray:** execute the following command in your conda env autognas
+**5. Ray:** execute the following command in your conda env automsr
 ```python
 pip install ray
 ```
