@@ -1,8 +1,8 @@
 # AutoMSR
 
-- AutoMSR is a molecluar structure automatic representation learning framework for multi-label metabolic pathway prediction.
+- AutoMSR is a molecular structure automatic representation learning framework for multi-label metabolic pathway prediction.
 
-- The framework of Auto-GNAS is as follows:
+- The framework of AutoMSR is as follows:
 
 <br>
 <div align=left> <img src="pic/AutoMSR.svg" height="100%" width="100%"/> </div>
