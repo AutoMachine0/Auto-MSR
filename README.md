@@ -1,6 +1,6 @@
 # AutoMSR
 
-- AutoMSR is a molecular structure automatic representation learning framework for multi-label metabolic pathway prediction.
+- AutoMSR is an molecular structure automatic representation learning framework for multi-label metabolic pathway prediction.
 
 - The framework of AutoMSR is as follows:
 
