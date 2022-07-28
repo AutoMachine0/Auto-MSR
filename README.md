@@ -10,8 +10,6 @@
 
 ## News
 
-- **The data preprocessing module and data set will upload soon, thank you for your waiting**.
-
 - 2021.10.24 Our work [*Multi-label Metabolic Pathway Prediction with Auto Molecular Structure Representation Learning*](https://ieeexplore.ieee.org/abstract/document/9669309) is accepted by **BIBM 2021**.
 
   
@@ -40,21 +38,31 @@ conda create -n automsr python=3.7
 source activate automsr
 ```
 
-**3. Pytorch 11.1.0:** execute the following command in your conda env automsr
+**3. Pytorch 1.8.1:** execute the following command in your conda env automsr
 
 ```python
-pip3 install torch torchvision torchaudio
+pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-**4. Pytorch Geometric:** execute the following command in your conda env automsr
+**4. Pytorch Geometric 2.0.2:** execute the following command in your conda env automsr
 ```python
-pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-1.11.0+cu102.html
+pip install torch-scatter==2.0.9 torch-sparse==0.6.12 torch-cluster==1.5.9 torch-spline-conv==1.2.1 torch-geometric==2.0.2 -f https://data.pyg.org/whl/torch-1.8.0+cu102.html
 ```
-**5. Ray:** execute the following command in your conda env automsr
+**5. Ray 1.7.0:** execute the following command in your conda env automsr
 ```python
-pip install ray
+pip install ray==1.7.0
 ```
 
+## Running the Experiment
+**1.Searching the GNN Architecture and Hyper Parameter**
+```python
+python search_main.py
+```
+
+**2.Testing the Optimal GNN Architecture**
+```python
+python test_main.py
+```
 
 ## Citing
 

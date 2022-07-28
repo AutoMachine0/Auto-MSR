@@ -1,11 +1,9 @@
 import time
 import torch
 import numpy
-from automsr.automsr_manager import utils
 from automsr.automsr_manager.pathway_mlp_net import PathWayMlpNet
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -127,7 +125,7 @@ class PathWayGnnManager(object):
 
         return labels, ts
 
-    def model_test(self, data, model, test_epoch):
+    def model_test(self, data, model):
 
         t_properties = data.test_data_label
         z_properties = model(data.test_data,
@@ -144,7 +142,6 @@ class PathWayGnnManager(object):
         p_properties[p_properties < 0.5] = 0
         p_properties[p_properties >= 0.5] = 1
 
-        # total_acc = accuracy_score(t_properties_acc, p_properties_acc)
         total_acc = self.Accuracy(t_properties, p_properties)
         total_precision = precision_score(t_properties, p_properties, average="samples")
         total_recall = recall_score(t_properties, p_properties, average="samples")
@@ -164,18 +161,26 @@ class PathWayGnnManager(object):
             recall = recall_score(y_true, y_pred)
             f1score = f1_score(y_true, y_pred)
 
-            print('Class ' + str(c + 1) + ' statistics:')
-            print('Accuracy %.4f, Precision %.4f, Recall %.4f, F1-Score %.4f\n' % (acc,
-                                                                                   precision,
-                                                                                   recall,
-                                                                                   f1score))
+            print('Class ' + str(c + 1) + ' Binary Classification Statistics:')
+
+            print('Accuracy(Binary) %.4f, '
+                  'Precision(Binary) %.4f, '
+                  'Recall(Binary) %.4f, '
+                  'F1-Score(Binary) %.4f\n'
+                  % (acc,
+                     precision,
+                     recall,
+                     f1score))
 
             acc_list.append(acc)
             pre_list.append(precision)
             rec_list.append(recall)
             f1_list.append(f1score)
 
-        print("%f\t%f\t%f\t%f" %
+        print("Accuracy(Multi-label): %f\n"
+              "Precision(Multi-label): %f\n"
+              "Recall(Multi-label) :%f\n"
+              "F1-Score(Multi-label) :%f" %
               (total_acc,
                total_precision,
                total_recall,
@@ -210,6 +215,8 @@ class PathWayGnnManager(object):
               '\t\t Rec_t '
               '\t\t F1_t')
 
+        acc_val, precision_val, recall_val, f1score_val = 0, 0, 0, 0
+        loss = 0
         for epoch in range(1, epochs + 1):
 
             model.train()
@@ -230,11 +237,11 @@ class PathWayGnnManager(object):
 
             model.eval()
 
-            auc_val, precision_val, recall_val, f1score_val = self.evaluate(model,
+            acc_val, precision_val, recall_val, f1score_val = self.evaluate(model,
                                                                             data,
                                                                             mode="val_data")
 
-            auc_test, precision_test, recall_test, f1score_test = self.evaluate(model,
+            acc_test, precision_test, recall_test, f1score_test = self.evaluate(model,
                                                                                 data,
                                                                                 mode="test_data")
             cost_time = time.time() - start
@@ -243,22 +250,22 @@ class PathWayGnnManager(object):
                   epoch,
                   cost_time,
                   loss.item(),
-                  auc_val,
+                  acc_val,
                   precision_val,
                   recall_val,
                   f1score_val,
-                  auc_test,
+                  acc_test,
                   precision_test,
                   recall_test,
                   f1score_test))
 
         if test_mode:
 
-            avg_acc, avg_pre, avg_rec, avg_f1, class_information_list = self.model_test(data, model, test_epoch)
+            avg_acc, avg_pre, avg_rec, avg_f1, class_information_list = self.model_test(data, model)
 
             return avg_acc, avg_pre, avg_rec, avg_f1, class_information_list
 
-        return auc_val, precision_val, recall_val, f1score_val
+        return acc_val, precision_val, recall_val, f1score_val
 
 if __name__=="__main__":
 
