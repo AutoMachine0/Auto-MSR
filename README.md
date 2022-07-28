@@ -59,7 +59,7 @@ pip install ray==1.7.0
 python search_main.py
 ```
 
-**2.Testing the Optimal GNN Architecture**
+**2.Testing the Optimal Model Designed by AutoMSR**
 ```python
 python test_main.py
 ```
