@@ -66,7 +66,7 @@ python test_main.py
 
 ## Citing
 
-If you think Auto-GNAS is useful tool for you, please cite our paper, thank you for your support:
+If you think AutoMSR is useful tool for you, please cite our paper, thank you for your support:
 ```python
 @INPROCEEDINGS{9669309,
   author={Chen, Jiamin and Gao, Jianliang and Lyu, Tengfei and Oloulade, Babatounde Moctard and Hu, Xiaohua},
