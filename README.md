@@ -10,7 +10,7 @@
 
 ## News
 
-- 2021.10.24 Our work [*AutoMSR: Auto Molecular Structure Representation Learning for Multi-label Metabolic Pathway Prediction*](https://ieeexplore.ieee.org/document/9864145) is accepted by **TCBB 2021**.
+- 2021.10.24 Our work [*AutoMSR: Auto Molecular Structure Representation Learning for Multi-label Metabolic Pathway Prediction*](https://ieeexplore.ieee.org/document/9864145) is accepted by **TCBB 2022**.
 
   
 ## Installing For Ubuntu 16.04
