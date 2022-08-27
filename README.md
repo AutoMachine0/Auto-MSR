@@ -10,7 +10,7 @@
 
 ## News
 
-- 2021.10.24 Our work [*Multi-label Metabolic Pathway Prediction with Auto Molecular Structure Representation Learning*](https://ieeexplore.ieee.org/abstract/document/9669309) is accepted by **BIBM 2021**.
+- 2021.10.24 Our work [*AutoMSR: Auto Molecular Structure Representation Learning for Multi-label Metabolic Pathway Prediction*](https://ieeexplore.ieee.org/document/9864145) is accepted by **TCBB 2021**.
 
   
 ## Installing For Ubuntu 16.04
@@ -68,13 +68,13 @@ python test_main.py
 
 If you think AutoMSR is useful tool for you, please cite our paper, thank you for your support:
 ```python
-@INPROCEEDINGS{9669309,
+@article{chen2022automsr,
+  title={AutoMSR: Auto Molecular Structure Representation Learning for Multi-label Metabolic Pathway Prediction},
   author={Chen, Jiamin and Gao, Jianliang and Lyu, Tengfei and Oloulade, Babatounde Moctard and Hu, Xiaohua},
-  booktitle={2021 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)}, 
-  title={Multi-label Metabolic Pathway Prediction with Auto Molecular Structure Representation Learning}, 
-  year={2021},
-  volume={},
-  number={},
-  pages={171-176},
-  doi={10.1109/BIBM52615.2021.9669309}}
+  journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics},
+  number={01},
+  pages={1--11},
+  year={2022},
+  publisher={IEEE Computer Society}
+}
 ```
